@@ -1,5 +1,5 @@
 project "tinyobjloader"
-   kind "ConsoleApp"
+   kind "StaticLib"
    language "C++"
    files { 
       "tiny_obj_loader.cc",
@@ -9,10 +9,16 @@ project "tinyobjloader"
 	targetdir ("bin/%{cfg.buildcfg}")
 	objdir ("bin-obj/%{cfg.buildcfg}")
 
-   configuration "Debug"
+   filter "configurations:Debug"
       defines { "DEBUG" }
-      flags { "Symbols" }
+      
+      symbols "On"
+      optimize "Off"
+      runtime "Debug"
 
-   configuration "Release"
-      -- defines { "NDEBUG" }
-      flags { "Symbols", "Optimize" }
+   filter "configurations:Release"
+      symbols "Off"
+      optimize "On"
+      runtime "Release"
+
+   filter ""

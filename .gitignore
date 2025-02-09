@@ -6,3 +6,18 @@ build/
 /python/tiny_obj_loader.h
 /tests/tester
 /tests/tester.dSYM
+
+#Ignore all generated files
+# Visual Studio generated files
+*.log
+*.tlog
+*.idb
+*.pdb
+*.res
+*.ilk
+*.lib
+*.vcxproj
+*.vcxproj.filters
+*.recipe
+bin-obj
+bin
